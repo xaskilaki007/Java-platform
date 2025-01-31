@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #000033;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.HelloController">
+    <children>
+        <AnchorPane layoutY="99.0" prefHeight="264.0" prefWidth="700.0" style="-fx-background-color: #CCCCFF;">
+            <children>
+                <TableView fx:id="myTableView" layoutX="32.0" layoutY="58.0" prefHeight="200.0" prefWidth="520.0" style="-fx-background-color: #CC9966;" visible="false">
+                    <columns>
+                        <TableColumn fx:id="authorColumn" editable="false" prefWidth="75.0" sortable="false" text="Автор" />
+                        <TableColumn fx:id="bookColumn" editable="false" prefWidth="75.0" sortable="false" text="Книга" />
+                        <TableColumn fx:id="yearColumn" editable="false" prefWidth="102.0" sortable="false" text="Год издания" />
+                        <TableColumn fx:id="pagesColumn" editable="false" prefWidth="159.0" sortable="false" text="Количество страниц" />
+                        <TableColumn fx:id="publisherColumn" editable="false" prefWidth="103.0" sortable="false" text="Издательство" />
+                    </columns>
+                </TableView>
+                <RadioButton fx:id="showTableRadioButton" layoutX="41.0" layoutY="37.0" mnemonicParsing="false" onAction="#toggleTableVisibility" text="Нажмите чтобы отобразить таблицу" textFill="#250096" />
+                <Button fx:id="importButton" layoutX="41.0" layoutY="3.0" mnemonicParsing="false" onAction="#importCsv" text="Импорт csv" />
+                <Button fx:id="exportButton" layoutX="142.0" layoutY="3.0" mnemonicParsing="false" onAction="#exportCsv" text="Экспорт csv" />
+                <MenuButton fx:id="actionMenuButton" layoutX="532.0" layoutY="18.0" mnemonicParsing="false" text="Выбрать действие">
+                    <items>
+                        <MenuItem fx:id="editMenuItem" mnemonicParsing="false" onAction="#editRow" text="Изменить строку" />
+                        <MenuItem fx:id="insertMenuItem" mnemonicParsing="false" onAction="#insertRow" text="Вставить строку" />
+                        <MenuItem fx:id="deleteMenuItem" mnemonicParsing="false" onAction="#deleteRow" text="Удалить строку" />
+                    </items>
+                </MenuButton>
+                <PieChart fx:id="pagesPieChart" layoutX="32.0" layoutY="260.0" prefHeight="500.0" prefWidth="300.0" />
+            </children>
+        </AnchorPane>
+        <Label layoutX="222.0" layoutY="20.0" text="app table" textAlignment="CENTER" textFill="#ccccff">
+            <font>
+                <Font name="Noto Sans Brahmi Regular" size="38.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
